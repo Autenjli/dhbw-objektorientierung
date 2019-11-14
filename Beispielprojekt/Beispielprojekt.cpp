@@ -166,29 +166,27 @@ public:
 		switch (nr) {
 
 		case 0:
-			level.push_front(BLOCK(300, 200, 50, 50, 6));
-			level.push_front(BLOCK(100, 50, 50, 50, 2));
-			level.push_front(BLOCK(150, 50, 50, 50, 3));
-			level.push_front(BLOCK(200, 50, 50, 50, 4));
-			level.push_front(BLOCK(250, 50, 50, 50, 5));
-			level.push_front(BLOCK(300, 50, 50, 50, 2));
-			level.push_front(BLOCK(350, 50, 50, 50, 1));
-			level.push_front(BLOCK(600, 50, 50, 50, 5));
-			level.push_front(BLOCK(650, 50, 50, 50, 5));
-			level.push_front(BLOCK(700, 50, 50, 50, 1));
-			level.push_front(BLOCK(50, 150, 50, 50, 2));
-			level.push_front(BLOCK(50, 400, 50, 50, 5));
-			level.push_front(BLOCK(100, 100, 70, 70, 2));
-
+			level.push_front(BLOCK(150, 0, 75, 75, 2));
+			level.push_front(BLOCK(225, 0, 75, 75, 3));
+			level.push_front(BLOCK(300, 0, 75, 75, 4));
+			level.push_front(BLOCK(375, 0, 75, 75, 2));
+			level.push_front(BLOCK(450, 0, 75, 75, 1));
+			level.push_front(BLOCK(525, 0, 75, 75, 5));
+			level.push_front(BLOCK(600, 0, 75, 75, 4));
+			level.push_front(BLOCK(675, 0, 75, 75, 1));
+			level.push_front(BLOCK(150, 75, 75, 75, 2));
+			level.push_front(BLOCK(675, 75, 75, 75, 1));
+			level.push_front(BLOCK(0, 75, 75, 75, 3));
+			level.push_front(BLOCK(75, 75, 75, 75, 1));
 
 			break;
 
 		case 1:
-			level.push_front(BLOCK(300, 200, 200, 200, 1));
+			
 			break;
 
 		case 2:
-			level.push_front(BLOCK(150, 50, 50, 50, 3));
+			
 			break;
 
 		}
@@ -283,7 +281,7 @@ public:
 
 			if (level.size() == 0) {//nächstes Level falls keine Blöcke mehr
 				LevelCount++;
-				status = Start;
+				status = Init;
 			}
 			break;
 		}
