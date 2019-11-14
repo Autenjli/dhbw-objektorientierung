@@ -175,9 +175,11 @@ public:
 			level.push_front(BLOCK(350, 50, 50, 50, 1));
 			level.push_front(BLOCK(600, 50, 50, 50, 5));
 			level.push_front(BLOCK(650, 50, 50, 50, 5));
-			level.push_front(BLOCK(700, 50, 50, 50, 8));
+			level.push_front(BLOCK(700, 50, 50, 50, 1));
 			level.push_front(BLOCK(50, 150, 50, 50, 2));
 			level.push_front(BLOCK(50, 400, 50, 50, 5));
+			level.push_front(BLOCK(100, 100, 70, 70, 2));
+
 
 			break;
 
