@@ -166,11 +166,18 @@ public:
 		switch (nr) {
 
 		case 0:
-			level.push_front(BLOCK(300, 200, 10, 10, 1));
+			level.push_front(BLOCK(300, 200, 50, 50, 6));
 			level.push_front(BLOCK(100, 50, 50, 50, 2));
 			level.push_front(BLOCK(150, 50, 50, 50, 3));
 			level.push_front(BLOCK(200, 50, 50, 50, 4));
 			level.push_front(BLOCK(250, 50, 50, 50, 5));
+			level.push_front(BLOCK(300, 50, 50, 50, 2));
+			level.push_front(BLOCK(350, 50, 50, 50, 1));
+			level.push_front(BLOCK(600, 50, 50, 50, 5));
+			level.push_front(BLOCK(650, 50, 50, 50, 5));
+			level.push_front(BLOCK(700, 50, 50, 50, 8));
+			level.push_front(BLOCK(50, 150, 50, 50, 2));
+			level.push_front(BLOCK(50, 400, 50, 50, 5));
 
 			break;
 
