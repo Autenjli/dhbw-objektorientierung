@@ -178,7 +178,9 @@ public:
 			level.push_front(BLOCK(675, 75, 75, 75, 1));
 			level.push_front(BLOCK(0, 75, 75, 75, 3));
 			level.push_front(BLOCK(75, 75, 75, 75, 1));
-
+			level.push_front(BLOCK(375, 150, 75, 75, 1));
+			level.push_front(BLOCK(675, 225, 75, 75, 1));
+			level.push_front(BLOCK(675, 300, 75, 75, 1));
 			break;
 
 		case 1:
