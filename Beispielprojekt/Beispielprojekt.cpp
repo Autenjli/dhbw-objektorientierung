@@ -19,8 +19,8 @@ const int SledLen = 50;//Schlittenlänge einer Schlitteneinheit
 const double StartVel = 7;//Grund bzw Startgeschwindigkeit des Balls
 
 
-class GameWindow : public Gosu::Window {
 
+class GameWindow : public Gosu::Window {
 public:
 	GameWindow() : Window(PixelX, PixelY)
 	{
@@ -102,10 +102,10 @@ public:
 
 	public:
 		BLOCK(double X, double Y, double wX, double wY, int h) {
-			this->x = X;
-			this->y = Y;
-			this->wx = wX;
-			this->wy = wY;
+			this->x = X * 50;
+			this->y = Y * 50 + 16;
+			this->wx = wX * 50;
+			this->wy = wY * 50;
 			this->hit = h;
 		}
 
@@ -141,16 +141,16 @@ public:
 	};
 
 
-
-
 	BALL ball;
 	SLED sled;
 	list<BLOCK> level;
+
 
 	int LevelCount = 0, life = 10;
 	double StartLineX, StartLineY, C;
 	list<BLOCK>::iterator iter, iter_erase;
 	bool hit = false;
+	int wait = 2;
 
 	enum stat { Init, Start, Play };
 	stat status = Init;
@@ -160,53 +160,83 @@ public:
 
 	void LevelSetup(int nr) {//Aufbau der Level
 
-							 //Aufbau:
-							 //level.push_front(BLOCK(x-pos,y-pos,breite,höhe,Anzahl_Treffer));
+		//Aufbau:
+		//level.push_front(BLOCK(x-pos,y-pos,breite,höhe,Anzahl_Treffer));
 
 		switch (nr) {
 
 		case 0:
-			level.push_front(BLOCK(150, 0, 75, 75, 2));
-			level.push_front(BLOCK(225, 0, 75, 75, 3));
-			level.push_front(BLOCK(300, 0, 75, 75, 4));
-			level.push_front(BLOCK(375, 0, 75, 75, 2));
-			level.push_front(BLOCK(450, 0, 75, 75, 1));
-			level.push_front(BLOCK(525, 0, 75, 75, 5));
-			level.push_front(BLOCK(600, 0, 75, 75, 4));
-			level.push_front(BLOCK(675, 0, 75, 75, 1));
-			level.push_front(BLOCK(150, 75, 75, 75, 2));
-			level.push_front(BLOCK(675, 75, 75, 75, 1));
-			level.push_front(BLOCK(0, 75, 75, 75, 3));
-			level.push_front(BLOCK(75, 75, 75, 75, 1));
-			level.push_front(BLOCK(375, 150, 75, 75, 1));
-			level.push_front(BLOCK(675, 225, 75, 75, 1));
-			level.push_front(BLOCK(675, 300, 75, 75, 1));
+			level.push_front(BLOCK(1, 1, 2, 2, 3));
+			level.push_front(BLOCK(3, 1, 2, 2, 3));
+			level.push_front(BLOCK(5, 1, 2, 2, 3));
+			level.push_front(BLOCK(7, 1, 2, 2, 3));
+			level.push_front(BLOCK(9, 1, 2, 2, 3));
+			level.push_front(BLOCK(11, 1, 2, 2, 3));
+			level.push_front(BLOCK(13, 1, 2, 2, 3));
+
+			level.push_front(BLOCK(1, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(3, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(5, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(7, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(9, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(11, 3.5, 2, 2, 2));
+			level.push_front(BLOCK(13, 3.5, 2, 2, 2));
+
+			level.push_front(BLOCK(1, 6, 2, 2, 1));
+			level.push_front(BLOCK(3, 6, 2, 2, 1));
+			level.push_front(BLOCK(5, 6, 2, 2, 1));
+			level.push_front(BLOCK(7, 6, 2, 2, 1));
+			level.push_front(BLOCK(9, 6, 2, 2, 1));
+			level.push_front(BLOCK(11, 6, 2, 2, 1));
+			level.push_front(BLOCK(13, 6, 2, 2, 1));
+
+
 			break;
 
 		case 1:
-			
+			level.push_front(BLOCK(1, 1, 2, 2, 1));
+			level.push_front(BLOCK(3, 3, 2, 2, 1));
+			level.push_front(BLOCK(5, 5, 2, 2, 1));
+
+			level.push_front(BLOCK(3, 1, 2, 2, 2));
+			level.push_front(BLOCK(5, 3, 2, 2, 2));
+			level.push_front(BLOCK(7, 5, 2, 2, 2));
+
+			level.push_front(BLOCK(5, 1, 2, 2, 3));
+			level.push_front(BLOCK(7, 3, 2, 2, 3));
+			level.push_front(BLOCK(9, 5, 2, 2, 3));
+
+			level.push_front(BLOCK(7, 1, 2, 2, 4));
+			level.push_front(BLOCK(9, 3, 2, 2, 4));
+			level.push_front(BLOCK(11, 5, 2, 2, 4));
+
+			level.push_front(BLOCK(9, 1, 2, 2, 5));
+			level.push_front(BLOCK(11, 3, 2, 2, 5));
+			level.push_front(BLOCK(13, 5, 2, 2, 5));
+
+
 			break;
 
 		case 2:
-			
+
 			break;
 
 		}
 	}
 
 
-
-
-
-
 	void draw() override {
 
-		//Noch in Arbeit...
-		//Gosu::Font f(5, "" , 1); 
-		//f.draw_rel(text, PixelX-50, 20, 1, 1, 1, 3, 3, Gosu::Color::WHITE);
 
+		graphics().draw_rect(0, 0, PixelX, 16, Gosu::Color::GREEN, 0.0);//Balken oben
 		graphics().draw_rect(sled.get_x(), PixelY - 5, sled.get_len()* SledLen, 5, Gosu::Color::GREEN, 0.0);//Schlitten zeichnen
 		graphics().draw_rect(ball.x - 5, ball.y - 5, 10, 10, Gosu::Color::FUCHSIA, 0.0);//Ball zeichnen
+
+		for (auto i = 0; i <= life - 2; i++) {
+			graphics().draw_rect(5 + i * 15, 3, 10, 10, Gosu::Color::FUCHSIA, 0.0);//Leben zeichnen
+
+		}
+
 
 		for (auto i : level) {
 			graphics().draw_rect(i.get_x(), i.get_y(), i.get_wx(), i.get_wy(), ColorList[i.get_hit()], 0.0);//Blöcke aus Blockliste zeichenen		
@@ -245,13 +275,16 @@ public:
 		}
 
 		case Play: {
+
 			ball.x = ball.x + ball.get_vx();//Ball auf neue Position
 			ball.y = ball.y + ball.get_vy();
+			wait++;
 
 
 			for (iter = level.begin(); iter != level.end(); iter++) {//Schleife über Blöcke
 
-				if (ball.y >= iter->get_y() && ball.y <= iter->get_y2() && ball.x >= iter->get_x() && ball.x <= iter->get_x2()) {//Prüfung auf Treffer
+				if (ball.y >= iter->get_y() && ball.y <= iter->get_y2() && ball.x >= iter->get_x() && ball.x <= iter->get_x2() && wait > 2) {//Prüfung auf Treffer
+					wait = 0;
 					iter->red_hit();//Hit-Couter reduzieren
 
 					if (iter->get_hit() <= 0) {//Merker um Block später zu löschen
@@ -278,6 +311,7 @@ public:
 				if (life <= 0) {//Spiel rücksetzen falls keine Leben mehr
 					life = 10;
 					LevelCount = 0;
+					status = Init;
 				}
 			}
 
@@ -285,16 +319,17 @@ public:
 				LevelCount++;
 				status = Init;
 			}
-			break;
 		}
+				   break;
 		}
+
 
 		sled.set_x(input().mouse_x());//Mausposition für Schlitten abfragen
 
 		if (ball.x <= 0 || ball.x >= PixelX) {//Ball rechts und links abprallen
 			ball.set_vx(ball.get_vx()*-1);
 		}
-		if (ball.y <= 0) {//Ball oben abprallen
+		if (ball.y <= 16) {//Ball oben abprallen
 			ball.set_vy(ball.get_vy() *-1);
 		}
 		if (ball.y >= PixelY - 5 && ball.x >= sled.get_x() && ball.x <= sled.get_x() + sled.get_len()*SledLen && ball.get_vy() > 0) {//Ball am Schlitten abprallen lassen
