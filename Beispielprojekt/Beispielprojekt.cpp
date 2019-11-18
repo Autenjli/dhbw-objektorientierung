@@ -267,7 +267,7 @@ public:
 
 			if (input().down(Gosu::MS_LEFT)) {
 				ball.set_amout(1);//Geschwindigkeit auf einmal StartVel setzen
-				ball.set_vx((cos(C))*ball.get_amout() + 2);//vy je nach Winkel setzen
+				ball.set_vx((cos(C))*ball.get_amout()*0.7);//vy je nach Winkel setzen
 				ball.set_vy(-1 * sqrt(ball.get_amout()*ball.get_amout() - ball.get_vx()*ball.get_vx()));//vy nach vx berechnen
 				status = Play;
 			}
