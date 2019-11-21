@@ -166,6 +166,24 @@ public:
 		switch (nr) {
 
 		case 0:
+			
+			break;
+
+
+		case 1:
+			//Level 1
+			level.push_front(BLOCK(0, 0, 4, 4, 5));
+			level.push_front(BLOCK(4, 0, 4, 4, 6));
+			level.push_front(BLOCK(8, 0, 4, 4, 5));
+			level.push_front(BLOCK(12, 0, 4, 4, 6));
+			level.push_front(BLOCK(0, 4, 4, 4, 4));
+			level.push_front(BLOCK(4, 4, 4, 4, 3));
+			level.push_front(BLOCK(8, 4, 4, 4, 4));
+			level.push_front(BLOCK(12, 4, 4, 4, 3));
+			break;
+
+		case 2:
+			//Level 2
 			level.push_front(BLOCK(1, 1, 2, 2, 3));
 			level.push_front(BLOCK(3, 1, 2, 2, 3));
 			level.push_front(BLOCK(5, 1, 2, 2, 3));
@@ -189,11 +207,10 @@ public:
 			level.push_front(BLOCK(9, 6, 2, 2, 1));
 			level.push_front(BLOCK(11, 6, 2, 2, 1));
 			level.push_front(BLOCK(13, 6, 2, 2, 1));
-
-
 			break;
 
-		case 1:
+		case 3:
+			//Level 3
 			level.push_front(BLOCK(1, 1, 2, 2, 1));
 			level.push_front(BLOCK(3, 3, 2, 2, 1));
 			level.push_front(BLOCK(5, 5, 2, 2, 1));
@@ -213,13 +230,39 @@ public:
 			level.push_front(BLOCK(9, 1, 2, 2, 5));
 			level.push_front(BLOCK(11, 3, 2, 2, 5));
 			level.push_front(BLOCK(13, 5, 2, 2, 5));
-
+			break;
+			
+		case 4:
+			//Level 4
+			level.push_front(BLOCK(14, 6, 2, 2, 6));
+			level.push_front(BLOCK(14, 4, 2, 2, 5));
+			level.push_front(BLOCK(14, 2, 2, 2, 4));
+			level.push_front(BLOCK(14, 0, 2, 2, 3));
+			level.push_front(BLOCK(12, 6, 2, 2, 6));
+			level.push_front(BLOCK(12, 4, 2, 2, 4));
+			level.push_front(BLOCK(12, 2, 2, 2, 3));
+			level.push_front(BLOCK(12, 0, 2, 2, 2));
+			level.push_front(BLOCK(8, 6, 2, 2, 6));
+			level.push_front(BLOCK(8, 4, 2, 2, 5));
+			level.push_front(BLOCK(8, 2, 2, 2, 5));
+			level.push_front(BLOCK(8, 0, 2, 2, 5));
+			level.push_front(BLOCK(6, 6, 2, 2, 6));
+			level.push_front(BLOCK(6, 4, 2, 2, 5));
+			level.push_front(BLOCK(6, 2, 2, 2, 5));
+			level.push_front(BLOCK(6, 0, 2, 2, 5));
+			level.push_front(BLOCK(2, 6, 2, 2, 6));
+			level.push_front(BLOCK(2, 4, 2, 2, 4));
+			level.push_front(BLOCK(2, 2, 2, 2, 3));
+			level.push_front(BLOCK(2, 0, 2, 2, 2));
+			level.push_front(BLOCK(0, 6, 2, 2, 6));
+			level.push_front(BLOCK(0, 4, 2, 2, 5));
+			level.push_front(BLOCK(0, 2, 2, 2, 4));
+			level.push_front(BLOCK(0, 0, 2, 2, 3));
+			level.push_front(BLOCK(10, 6, 2, 2, 6));
+			level.push_front(BLOCK(4, 6, 2, 2, 6));
 
 			break;
 
-		case 2:
-
-			break;
 
 		}
 	}
