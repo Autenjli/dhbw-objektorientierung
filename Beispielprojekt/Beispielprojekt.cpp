@@ -394,7 +394,7 @@ public:
 
 			for (iter = level.begin(); iter != level.end(); iter++) {//Schleife über Blöcke
 
-				if (ball.y >= iter->get_y() && ball.y <= iter->get_y2() && ball.x >= iter->get_x() && ball.x <= iter->get_x2() && wait > 2) {//Prüfung auf Treffer
+				if (ball.y >= iter->get_y() && ball.y <= iter->get_y2() && ball.x >= iter->get_x() && ball.x <= iter->get_x2() && wait >= 2) {//Prüfung auf Treffer
 					wait = 0;
 					iter->red_hit();//Hit-Couter reduzieren
 
@@ -416,6 +416,11 @@ public:
 				hit = false;
 			}
 
+			if (level.size() == 0) {//nächstes Level falls keine Blöcke mehr
+				LevelCount++;
+				status = Init;
+			}
+
 			if (ball.y >= PixelY) {//Leben reduzieren und zurück zum Start falls Ball verloren
 				status = Start;
 				life = life - 1;
@@ -423,13 +428,11 @@ public:
 					life = 10;
 					LevelCount = 0;
 					status = Init;
+					level.clear();
 				}
 			}
 
-			if (level.size() == 0) {//nächstes Level falls keine Blöcke mehr
-				LevelCount++;
-				status = Init;
-			}
+
 		}
 				   break;
 		}
