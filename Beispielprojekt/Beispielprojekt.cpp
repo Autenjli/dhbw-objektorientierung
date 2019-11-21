@@ -166,11 +166,6 @@ public:
 		switch (nr) {
 
 		case 0:
-			
-			break;
-
-
-		case 1:
 			//Level 1
 			level.push_front(BLOCK(0, 0, 4, 4, 5));
 			level.push_front(BLOCK(4, 0, 4, 4, 6));
@@ -182,7 +177,7 @@ public:
 			level.push_front(BLOCK(12, 4, 4, 4, 3));
 			break;
 
-		case 2:
+		case 1:
 			//Level 2
 			level.push_front(BLOCK(1, 1, 2, 2, 3));
 			level.push_front(BLOCK(3, 1, 2, 2, 3));
@@ -209,7 +204,7 @@ public:
 			level.push_front(BLOCK(13, 6, 2, 2, 1));
 			break;
 
-		case 3:
+		case 2:
 			//Level 3
 			level.push_front(BLOCK(1, 1, 2, 2, 1));
 			level.push_front(BLOCK(3, 3, 2, 2, 1));
@@ -232,7 +227,7 @@ public:
 			level.push_front(BLOCK(13, 5, 2, 2, 5));
 			break;
 			
-		case 4:
+		case 3:
 			//Level 4
 			level.push_front(BLOCK(14, 6, 2, 2, 6));
 			level.push_front(BLOCK(14, 4, 2, 2, 5));
@@ -262,9 +257,55 @@ public:
 			level.push_front(BLOCK(4, 6, 2, 2, 6));
 
 			break;
-
-		case 5:
+			case 4:
 			//Level 5
+			level.push_front(BLOCK(6, 6, 1, 1, 5));
+			level.push_front(BLOCK(5, 5, 1, 1, 5));
+			level.push_front(BLOCK(4, 4, 1, 1, 5));
+			level.push_front(BLOCK(7, 7, 1, 1, 5));
+			level.push_front(BLOCK(8, 7, 1, 1, 5));
+			level.push_front(BLOCK(8, 6, 1, 1, 5));
+			level.push_front(BLOCK(8, 5, 1, 1, 5));
+			level.push_front(BLOCK(8, 4, 1, 1, 5));
+			level.push_front(BLOCK(9, 7, 1, 1, 5));
+			level.push_front(BLOCK(10, 6, 1, 1, 5));
+			level.push_front(BLOCK(11, 5, 1, 1, 5));
+			level.push_front(BLOCK(12, 4, 1, 1, 5));
+			level.push_front(BLOCK(12, 3, 1, 1, 5));
+			level.push_front(BLOCK(11, 3, 1, 1, 5));
+			level.push_front(BLOCK(10, 3, 1, 1, 5));
+			level.push_front(BLOCK(9, 3, 1, 1, 5));
+			level.push_front(BLOCK(8, 3, 1, 1, 5));
+			level.push_front(BLOCK(7, 3, 1, 1, 5));
+			level.push_front(BLOCK(6, 3, 1, 1, 5));
+			level.push_front(BLOCK(5, 3, 1, 1, 5));
+			level.push_front(BLOCK(4, 3, 1, 1, 5));
+			level.push_front(BLOCK(0, 4, 1, 1, 5));
+			level.push_front(BLOCK(1, 4, 1, 1, 5));
+			level.push_front(BLOCK(2, 4, 1, 1, 5));
+			level.push_front(BLOCK(3, 4, 1, 1, 5));
+			level.push_front(BLOCK(12, 4, 1, 1, 5));
+			level.push_front(BLOCK(13, 4, 1, 1, 5));
+			level.push_front(BLOCK(14, 4, 1, 1, 5));
+			level.push_front(BLOCK(15, 4, 1, 1, 5));
+			level.push_front(BLOCK(6, 0, 1, 1, 5));
+			level.push_front(BLOCK(6, 1, 1, 1, 5));
+			level.push_front(BLOCK(6, 2, 1, 1, 5));
+			level.push_front(BLOCK(10, 0, 1, 1, 5));
+			level.push_front(BLOCK(10, 1, 1, 1, 5));
+			level.push_front(BLOCK(10, 2, 1, 1, 5));
+			level.push_front(BLOCK(11, 6, 1, 1, 5));
+			level.push_front(BLOCK(12, 7, 1, 1, 5));
+			level.push_front(BLOCK(13, 8, 1, 1, 5));
+			level.push_front(BLOCK(14, 9, 1, 1, 5));
+			level.push_front(BLOCK(2, 9, 1, 1, 5));
+			level.push_front(BLOCK(3, 8, 1, 1, 5));
+			level.push_front(BLOCK(4, 7, 1, 1, 5));
+			level.push_front(BLOCK(5, 6, 1, 1, 5));
+			
+			break;
+		case 5:
+			//Level 6
 			level.push_front(BLOCK(2, 4, 1, 1, 5));
 			level.push_front(BLOCK(2, 5, 1, 1, 5));
 			level.push_front(BLOCK(2, 6, 1, 1, 5));
